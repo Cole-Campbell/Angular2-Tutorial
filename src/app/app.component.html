@@ -1,31 +1,11 @@
-<!--This is the template that the file app.component.ts uses within the Decorator properties.
-This file is used so a file is designated for the contents of the page and do not fill up
-the decorator within the .ts file.-->
-<h1>
-  {{title}}
-</h1>
-<div *ngIf="selectedHero">
-<h2>{{selectedHero.name}} Details</h2>
-<div><label>id: </label>{{selectedHero.id}}</div>
-<div><label>name: </label>
-  <input [(ngModel)]="selectedHero.name" placeholder="Name">
-</div>
-</div>
-
-
-<div>
-  <ul class="heroes">
-    <!--The * indicates that the <li> element and children are part of the master template
-    ngFor iterates over the heroes array returned by the appcomponent and stamps out instances
-    the quotes mean let each hero in the heroes array store in hero variable and use on
-    corresponding master template.
-
-    (click)="onSelect(hero) – This is known as an event binding.-->
-    <li *ngFor="let hero of heroes"
-        [class.selected]="hero === selectedHero"
-        (click)="onSelect(hero)">
-      <span class="badge">{{hero.id}}</span> {{hero.name}}
-    </li>
-
-  </ul>
-</div>
+ <!--Places the hero name within the input as the default value
+  Two way binding is in effect with ngModel as it is accessing the variable
+  hero.name and editing it.-->
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+<h2>My List of Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes" (click)="onSelect(hero)"
+  [class.selected]="hero === selectedHero">
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>

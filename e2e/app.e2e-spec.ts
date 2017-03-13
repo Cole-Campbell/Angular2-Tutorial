@@ -1,10 +1,10 @@
-import { AngularHeroesPage } from './app.po';
+import { HeroesPage } from './app.po';
 
-describe('angular-heroes App', function() {
-  let page: AngularHeroesPage;
+describe('heroes App', () => {
+  let page: HeroesPage;
 
   beforeEach(() => {
-    page = new AngularHeroesPage();
+    page = new HeroesPage();
   });
 
   it('should display message saying app works', () => {
