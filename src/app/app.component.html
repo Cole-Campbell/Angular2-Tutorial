@@ -1,7 +1,6 @@
  <!--Places the hero name within the input as the default value
   Two way binding is in effect with ngModel as it is accessing the variable
   hero.name and editing it.-->
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
 <h2>My List of Heroes</h2>
 <ul class="heroes">
   <li *ngFor="let hero of heroes" (click)="onSelect(hero)"
@@ -9,3 +8,10 @@
     <span class="badge">{{hero.id}}</span> {{hero.name}}
   </li>
 </ul>
+
+<div *ngIf="selectedHero">
+  <h2>
+    {{selectedHero.name | uppercase}} is my hero
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>

@@ -23,7 +23,7 @@ import { Hero } from './hero';
     <br/>
     
   `,
-  styles: []
+  styleUrls: ['./hero-detail.component.css']
 })
 export class HeroDetailComponent implements OnInit {
   @Input()
